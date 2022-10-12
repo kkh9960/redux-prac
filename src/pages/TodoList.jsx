@@ -12,9 +12,6 @@ function TodoList() {
       <Form/>
       <List/>
     </Layout>
-    // <Layout>
-    // props.children을 사용해서 Layout사이에 있는 값을 모두 넘겨줌
-    // </Layout>
   );
 };
 
