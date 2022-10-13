@@ -13,6 +13,7 @@ const Router = () => {
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>
     </BrowserRouter>
+    // brows~안에 routes 쓰고 경롤를 써준다. 본 페이지와 상세 페이지의 각 주소
   );
 };
 

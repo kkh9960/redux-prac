@@ -49,12 +49,17 @@ const todo = (state = initialState, action) => {
       return {
         ...state,
         todoList: [...state.todoList, action.payload],
+        // 전개구문으로 입력값을 그대로 붙여준다.
       };
     case DELETE_TODO:
       return {
+        ...state,
         todoList: [
           ...state.todoList.filter((todo) => todo.id !== action.payload.id),
         ],
+        // 필터로 걸러서 삭제버튼을 누른 id가 화면에 렌더링되는 todo의 list에
+        // 있지 않는것만 내보내준다. (삭제버튼누른 id는 무조건 todoList안임)
+        // 그래서 무조건 버튼누른거 빼고 다 내보내는 것이다.
       };
     case TOGGLE_TODO:
       return {
@@ -66,6 +71,8 @@ const todo = (state = initialState, action) => {
             } else {
               return { ...todo };
             }
+            //맵으로 걸러 버튼 누른 id가 todoList에 있으면
+            // 전개구문으로 버튼 누른 id todo에서 isDone을 반대로 바꿔준다.
           }),
         ],
       };
